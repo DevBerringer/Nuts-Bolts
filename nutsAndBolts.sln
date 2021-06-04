@@ -1,15 +1,15 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-# Visual Studio 15
-VisualStudioVersion = 15.0.26124.0
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.30907.101
 MinimumVisualStudioVersion = 15.0.26124.0
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NutsAndBolts.data", "NutsAndBolts.Data\NutsAndBolts.data.csproj", "{190E4CC6-1663-4844-AF5F-CA88E7AC6C84}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NutsAndBolts.Data", "NutsAndBolts.Data\NutsAndBolts.Data.csproj", "{190E4CC6-1663-4844-AF5F-CA88E7AC6C84}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NutsAndBolts.Services", "NutsAndBolts.Services\NutsAndBolts.Services.csproj", "{E0EF7C1C-E6F8-4550-A6E1-6EE55EDC2F31}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NutsAndBolts.Services", "NutsAndBolts.Services\NutsAndBolts.Services.csproj", "{E0EF7C1C-E6F8-4550-A6E1-6EE55EDC2F31}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NutsAndBolts.web", "NutsAndBolts.Web\NutsAndBolts.web.csproj", "{FB2760F7-F9BE-439B-A42E-70181E115A19}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NutsAndBolts.web", "NutsAndBolts.Web\NutsAndBolts.web.csproj", "{FB2760F7-F9BE-439B-A42E-70181E115A19}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "NutsAndBolts.Test", "NutsAndBolts.Test\NutsAndBolts.Test.csproj", "{08BD32CD-86DA-453A-A62C-2F8FE77E9145}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "NutsAndBolts.Test", "NutsAndBolts.Test\NutsAndBolts.Test.csproj", "{08BD32CD-86DA-453A-A62C-2F8FE77E9145}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -19,9 +19,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 		Release|x64 = Release|x64
 		Release|x86 = Release|x86
-	EndGlobalSection
-	GlobalSection(SolutionProperties) = preSolution
-		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
 		{190E4CC6-1663-4844-AF5F-CA88E7AC6C84}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
@@ -72,5 +69,11 @@ Global
 		{08BD32CD-86DA-453A-A62C-2F8FE77E9145}.Release|x64.Build.0 = Release|Any CPU
 		{08BD32CD-86DA-453A-A62C-2F8FE77E9145}.Release|x86.ActiveCfg = Release|Any CPU
 		{08BD32CD-86DA-453A-A62C-2F8FE77E9145}.Release|x86.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {65021761-D291-4026-AC9C-20FB09410FB0}
 	EndGlobalSection
 EndGlobal

@@ -6,11 +6,13 @@ using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
+using NutsAndBolts.Data;
 
 namespace NutsAndBolts.web
 {
@@ -28,6 +30,13 @@ namespace NutsAndBolts.web
         {
 
             services.AddControllers();
+
+            services.AddDbContext<NaBDBContext>(
+                opts => {
+                opts.EnableDetailedErrors();
+                opts.UseNpgsql(Configuration.GetConnectionString("NutsAndBolts.dev"));
+            });
+
             services.AddSwaggerGen(c =>
             {
                 c.SwaggerDoc("v1", new OpenApiInfo { Title = "NutsAndBolts.web", Version = "v1" });

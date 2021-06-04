@@ -1,0 +1,13 @@
+# Project Variables
+
+Project_NAME ?= NutsAndBolts
+ORG_NAME ?= NutsAndBolts
+REPO_NAME ?= NutsAndBolts
+
+.PHONY: migrations db
+
+migrations: 
+	cd ./NutsAndBolts.Data && dotnet ef --startup-project ../SolarCoffe.Web/ migrations add $(mname) && cd ..
+
+db: 
+	cd ./NutsAndBolts.Data && dotnet ef --startup-project ../SolarCoffe.Web/ database update && cd ..
