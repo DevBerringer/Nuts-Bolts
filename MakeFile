@@ -4,10 +4,11 @@ Project_NAME ?= NutsAndBolts
 ORG_NAME ?= NutsAndBolts
 REPO_NAME ?= NutsAndBolts
 
-.PHONY: migrations db
+.PHONY: migrations
+migrations:
+	cd ./NutsAndBolts.Data && dotnet ef --startup-project ../NutsAndBolts.web/ migrations add $(mname) && cd ..
 
-migrations: 
-	cd ./NutsAndBolts.Data && dotnet ef --startup-project ../SolarCoffe.Web/ migrations add $(mname) && cd ..
+.PHONY: db
+db:
+	cd ./NutsAndBolts.Data && dotnet ef --startup-project ../NutsAndBolts.web/ database update && cd ..
 
-db: 
-	cd ./NutsAndBolts.Data && dotnet ef --startup-project ../SolarCoffe.Web/ database update && cd ..
