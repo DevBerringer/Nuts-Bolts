@@ -13,6 +13,7 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using NutsAndBolts.Data;
+using NutsAndBolts.Services.Product;
 
 namespace NutsAndBolts.web
 {
@@ -36,6 +37,8 @@ namespace NutsAndBolts.web
                 opts.EnableDetailedErrors();
                 opts.UseNpgsql(Configuration.GetConnectionString("NutsAndBolts.dev"));
             });
+
+            services.AddTransient<IProductService, ProductService>();
 
             services.AddSwaggerGen(c =>
             {

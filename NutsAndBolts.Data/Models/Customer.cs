@@ -4,17 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NutsAndBolts.Data.Modals
+namespace NutsAndBolts.Data.Models
 {
-    public class ProductInventory
+    public class Customer
     {
         public int Id { get; set; }
         public DateTime CreateOn { get; set; }
         public DateTime UpdateOn { get; set; }
-        public int QuantityOnHand { get; set; }
-        public int IdealQuantity { get; set; }
+        public string FirstName { get; set; }
+        public string LastName { get; set; }
 
-        public Product Product { get; set; }
-
+        public CustomerAddress PrimaryAddress { get; set; }
     }
 }

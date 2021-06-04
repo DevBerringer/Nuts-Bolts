@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace NutsAndBolts.Data.Modals
+namespace NutsAndBolts.Data.Models
 {
     public class CustomerAddress
     {

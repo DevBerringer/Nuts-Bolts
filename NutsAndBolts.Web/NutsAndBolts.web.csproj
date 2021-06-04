@@ -5,6 +5,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="NewFolder1\**" />
+    <Content Remove="NewFolder1\**" />
+    <EmbeddedResource Remove="NewFolder1\**" />
+    <None Remove="NewFolder1\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <PackageReference Include="Microsoft.AspNetCore.Mvc.NewtonsoftJson" Version="5.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore" Version="5.0.6" />
     <PackageReference Include="Microsoft.EntityFrameworkCore.Design" Version="5.0.6">
@@ -21,6 +28,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\NutsAndBolts.Data\NutsAndBolts.Data.csproj" />
+    <ProjectReference Include="..\NutsAndBolts.Services\NutsAndBolts.Services.csproj" />
   </ItemGroup>
 
 </Project>

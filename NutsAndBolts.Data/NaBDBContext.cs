@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
-using NutsAndBolts.Data.Modals;
+using NutsAndBolts.Data.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
