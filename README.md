@@ -1,6 +1,6 @@
 # Nuts-Bolts
 Dashboard application with the ability to track and manage inventory and create customer invoices for a 
-fictitious company called Nuts &amp; Bolts. Inventory is updated in real time as invoices and shipments come in. 
+fictitious company called Nuts Ect. Inventory is updated in real time as invoices and shipments come in. 
 # nutsandbolts.frontend
 
 ## Project setup
