@@ -21,20 +21,22 @@ namespace NutsAndBolts.Services.Inventory
             _logger = logger;
         }
 
-        public void CreateSnapshot()
-        {
-            throw new NotImplementedException();
-        }
-
+        /// <summary>
+        /// Gets a Product Inventory instance by Product ID
+        /// </summary>
+        /// <param name="productId"></param>
+        /// <returns>ProductInventory</returns>
         public ProductInventory GetByProductId(int productId)
         {
-            throw new NotImplementedException();
+            return _db.ProductInventories
+                .Include(pi => pi.Product)
+                .FirstOrDefault(pi => pi.Product.Id == productId);
         }
 
         /// <summary>
         /// Returns all current inventory from the database
         /// </summary>
-        /// <returns></returns>
+        /// <returns>List of Product Inventory</returns>
         public List<ProductInventory> GetCurrentInventory()
         {
             return _db.ProductInventories
@@ -43,9 +45,19 @@ namespace NutsAndBolts.Services.Inventory
                 .ToList();
         }
 
+        /// <summary>
+        /// Returns Snapshot history for the previus 6 hours
+        /// </summary>
+        /// <returns></returns>
         public List<ProductInventorySnapshot> GetSnapShotHistory()
         {
-            throw new NotImplementedException();
+            var earliest = DateTime.UtcNow - TimeSpan.FromHours(6);
+            return _db.ProductInventorySnapshots
+                .Include(snap => snap.Product)
+                .Where(snap 
+                    => snap.SnapshotTime > earliest
+                    && !snap.Product.IsArchived)
+                .ToList();
         }
 
         /// <summary>
@@ -54,7 +66,7 @@ namespace NutsAndBolts.Services.Inventory
         /// </summary>
         /// <param name="id">productId</param>
         /// <param name="adjustment">number of units added/removed from inventory</param>
-        /// <returns></returns>
+        /// <returns>Service Response</returns>
         public ServiceResponse<ProductInventory> UpdateUnitsAvailable(int id, int adjustment)
         {
             var now = DateTime.UtcNow;
@@ -69,7 +81,7 @@ namespace NutsAndBolts.Services.Inventory
 
                 try
                 {
-                    CreateSnapshot();
+                    CreateSnapshot(inventory);
                 }
                 catch (Exception e)
                 {
@@ -97,6 +109,24 @@ namespace NutsAndBolts.Services.Inventory
                     Data = null
                 };
             }
+        }
+
+        /// <summary>
+        /// Creates a snapshot record of the data using the Product Inventory provided
+        /// </summary>
+        /// <param name="inv"></param>
+        private void CreateSnapshot(ProductInventory inv)
+        {
+            var now = DateTime.UtcNow;
+
+            var snapshot = new ProductInventorySnapshot
+            {
+                SnapshotTime = now,
+                Product = inv.Product,
+                QuantityOnHand = inv.QuantityOnHand
+            };
+
+            _db.Add(snapshot);
         }
     }
 }

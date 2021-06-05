@@ -13,7 +13,10 @@ using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.OpenApi.Models;
 using NutsAndBolts.Data;
+using NutsAndBolts.Services.Customer;
 using NutsAndBolts.Services.Product;
+using NutsAndBolts.Services.Inventory;
+using NutsAndBolts.Services.Order;
 
 namespace NutsAndBolts.web
 {
@@ -39,6 +42,9 @@ namespace NutsAndBolts.web
             });
 
             services.AddTransient<IProductService, ProductService>();
+            services.AddTransient<ICustomerService, CustomerService>();
+            services.AddTransient<IInventroyService, InventoryService>();
+            services.AddTransient<IOrderService, OrderService>();
 
             services.AddSwaggerGen(c =>
             {

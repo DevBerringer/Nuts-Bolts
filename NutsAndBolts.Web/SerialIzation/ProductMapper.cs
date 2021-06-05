@@ -12,7 +12,7 @@ namespace NutsAndBolts.web.SerialIzation
         ///     Maps a Product data model to a Product model view Model
         /// </summary>
         /// <param name="product"></param>
-        /// <returns></returns>
+        /// <returns>ProductModel</returns>
         public static ProductModel SerializeProductModel(Data.Models.Product product)
         {
             return new ProductModel
@@ -31,7 +31,7 @@ namespace NutsAndBolts.web.SerialIzation
         ///     Maps a Product view model to a Product data Model
         /// </summary>
         /// <param name="product"></param>
-        /// <returns></returns>
+        /// <returns>Prudcut</returns>
         public static Data.Models.Product SerializeProductModel(ProductModel product)
         {
             return new Data.Models.Product
