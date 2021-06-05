@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace NutsAndBolts.web.SerialIzation
 {
-    public class ProductMapper
+    public static class ProductMapper
     {
         /// <summary>
         ///     Maps a Product data model to a Product model view Model
