@@ -18,13 +18,13 @@ namespace NutsAndBolts.Services.Order
         private readonly NaBDBContext _db;
         private readonly ILogger<OrderService> _logger;
         private readonly IProductService _productService;
-        private readonly IInventroyService _inventoryService;
+        private readonly IInventoryService _inventoryService;
 
         public OrderService(
             NaBDBContext dbContext, 
             ILogger<OrderService> logger,
             IProductService productService,
-            IInventroyService inventoryService)
+            IInventoryService inventoryService)
         {
             _db = dbContext;
             _logger = logger;

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace NutsAndBolts.Services.Inventory
 {
-    public class InventoryService : IInventroyService
+    public class InventoryService : IInventoryService
     {
         private readonly NaBDBContext _db;
         private readonly ILogger<InventoryService> _logger;

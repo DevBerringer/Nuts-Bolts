@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace NutsAndBolts.Services.Inventory
 {
-    public interface IInventroyService
+    public interface IInventoryService
     {
         public List<ProductInventory> GetCurrentInventory();
         public ServiceResponse<ProductInventory> UpdateUnitsAvailable(int id, int adjustment);

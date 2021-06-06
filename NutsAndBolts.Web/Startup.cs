@@ -43,7 +43,7 @@ namespace NutsAndBolts.web
 
             services.AddTransient<IProductService, ProductService>();
             services.AddTransient<ICustomerService, CustomerService>();
-            services.AddTransient<IInventroyService, InventoryService>();
+            services.AddTransient<IInventoryService, InventoryService>();
             services.AddTransient<IOrderService, OrderService>();
 
             services.AddSwaggerGen(c =>

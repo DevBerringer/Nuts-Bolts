@@ -1,37 +1,32 @@
 ﻿using System;
-using System.ComponentModel.DataAnnotations;
 using System.Collections.Generic;
+using System.ComponentModel.DataAnnotations;
 using System.Linq;
-using System.Text;
 using System.Threading.Tasks;
 
-namespace NutsAndBolts.Data.Models
+namespace NutsAndBolts.web.ViewModels
 {
-    public class CustomerAddress
+    public class CustomerModel
     {
         public int Id { get; set; }
         public DateTime CreatedOn { get; set; }
         public DateTime UpdatedOn { get; set; }
+        [MaxLength(32)] public String FirstName { get; set; }
+        [MaxLength(32)] public String LastName { get; set; }
+        public CustomerAddressModel PrimaryAddress { get; set; }
+    }
 
-        [MaxLength(100)]
+    public class CustomerAddressModel
+    {
+        public int Id { get; set; }
+        public DateTime CreatedOn { get; set; }
+        public DateTime UpdatedOn { get; set; }
         public string AddressLine1 { get; set; }
-
-        [MaxLength(100)]
         public string AddressLine2 { get; set; }
-        
-        [MaxLength(4)]
         public string AptNum { get; set; }
-        
-        [MaxLength(60)]
         public string City { get; set; }
-        
-        [MaxLength(2)]
         public string State { get; set; }
-        
-        [MaxLength(10)]
         public string PostalCode { get; set; }
-        
-        [MaxLength(50)]
         public string Country { get; set; }
     }
 }

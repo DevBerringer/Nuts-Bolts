@@ -30,6 +30,7 @@ namespace NutsAndBolts.Services.Customer
             {
                 _db.Customers.Add(customer);
                 _db.SaveChanges();
+
                 return new ServiceResponse<Data.Models.Customer>
                 {
                     IsSuccess = true,
